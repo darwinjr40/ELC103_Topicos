@@ -19,7 +19,7 @@ class CreatePeopleTable extends Migration
             $table->string('nombre');
             $table->char('sexo');
             $table->string('telefono');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('domicilio');
             $table->timestamps();
         });

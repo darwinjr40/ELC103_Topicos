@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1>Bienvenido a topicos</h1>
+<h1 id="titulo">Bienvenido a topicos</h1>
 
 @stop
 
@@ -17,7 +17,7 @@
 <br>
 <div class="card">
     <div class="card-body">
-      <table class="table table-striped" id="personal" >
+      <table class="table table-striped" id="personal" border="1" >
         <thead>
           <tr>
             <th scope="col" width="5%">Id</th>
@@ -34,25 +34,25 @@
         <tbody>
           @foreach ($personas as $persona)
             <tr>
-              <th>{{$persona->id}}</th>
-              <th>{{$persona->ci}}</th>
-              <th>{{$persona->nombre}}</th>
-              <th>{{$persona->sexo}}</th>
-              <th>{{$persona->telefono}}</th>
-              <th>{{$persona->email}}</th>
-              <th>{{$persona->domicilio}}</th>
+              <td>{{$persona->id}}</td>
+              <td>{{$persona->ci}}</td>
+              <td>{{$persona->nombre}}</td>
+              <td>{{$persona->sexo}}</td>
+              <td>{{$persona->telefono}}</td>
+              <td>{{$persona->email}}</td>
+              <td>{{$persona->domicilio}}</td>
 
-              <th >
+              <td >
                 <form  action="{{route('persons.destroy',$persona)}}" method="post">
                   @csrf
                   @method('delete')
-                    <a  class="btn btn-primary btn-sm" href="{{route('persons.show',$persona)}}">Ver</a>  
+                    {{-- <a  class="btn btn-primary btn-sm" href="{{route('persons.show',$persona)}}">Ver</a>   --}}
                     <a class="btn btn-info btn-sm" href="{{route('persons.edit',$persona)}}">Editar</a>                 
                     <button class="btn btn-danger btn-sm" onclick="return confirm('¿ESTA SEGURO DE  BORRAR?')" 
                     value="Borrar">Eliminar</button>
 
                 </form>
-              </th>    
+              </td>    
             </tr>
           @endforeach
         </tbody> 
@@ -75,4 +75,6 @@
      $('#personal').DataTable();
     } );
 </script>
+
+
 @stop
