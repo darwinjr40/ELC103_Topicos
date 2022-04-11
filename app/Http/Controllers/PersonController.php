@@ -22,6 +22,7 @@ class PersonController extends Controller
 
     public function store(Request $request)
     {
+        // $data =
         $request->validate([
             'ci' => 'required',
             'nombre' => 'required',
@@ -31,7 +32,12 @@ class PersonController extends Controller
             'domicilio' => ' required'
         ]);
 
-        // return ($request);
+        // $email = Person::where('email', $data['email'])->first();
+        // if ($email) {
+        //     return response(['message' => 'Error correo ya registrado'],
+        //         401);
+        // }
+
         $personas = Person::create($request->all());
         return redirect()->route('persons.index');        
     }

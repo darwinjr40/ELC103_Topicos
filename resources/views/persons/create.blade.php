@@ -49,17 +49,16 @@
                 <input type="email" name="email"  class="focus border-primary  form-control" value="{{old('email')}}">
                 <i  class="formulario__validacion-estado fas"></i>
                 @error('email') <small style="color: red">*{{$message}}</small> @enderror
-        </div>
-        <p id="email" class="formulario__input-error">*El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-        <!-- Grupo: Telefono -->
-        <h5>Telefono:</h5>
-        <div class="formulario__grupo-input" id="grupo__telefono">
-            <input type="number" name="telefono"  class="focus border-primary  form-control" value="{{old('telefono')}}">
-            <i  class="formulario__validacion-estado fas"></i>
-            @error('telefono')  <small style="color: red">*{{$message}}</small> @enderror
-        </div>
-        <p id="telefono" class="formulario__input-error">*El telefono solo puede contener entre 7 y 14 dígitos.</p>
-            
+            </div>
+            <p id="email" class="formulario__input-error">*El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+            <!-- Grupo: Telefono -->
+            <h5>Telefono:</h5>
+            <div class="formulario__grupo-input" id="grupo__telefono">
+                <input type="number" name="telefono"  class="focus border-primary  form-control" value="{{old('telefono')}}">
+                <i  class="formulario__validacion-estado fas"></i>
+                @error('telefono')  <small style="color: red">*{{$message}}</small> @enderror
+            </div>
+            <p id="telefono" class="formulario__input-error">*El telefono solo puede contener entre 7 y 14 dígitos.</p>
             <!-- Grupo: Domicilio -->
             <h5>Domicilio:</h5>
             <div class="formulario__grupo-input" id="grupo__domicilio">
